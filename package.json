@@ -1,0 +1,9 @@
+{
+  "name": "schedulemessages",
+  "version": "1.0.0",
+  "description": "schedule your discord messages",
+  "main": "app.js",
+  "dependencies": {
+    "discord.io": "^2.5.1"
+  }
+}
