@@ -18,6 +18,12 @@ function prompt() {
 			case 'donezo':
 				process.exit()
 				break
+			case 'help':
+				console.log('	donezo					// exits prompt')
+				console.log('	help					// shows this page ..hello???')
+				console.log('	save <name> <channelID/userID>		// saves to contacts')
+				console.log('	send <name> <minutes> <message>		// sends scheduled message')
+				break
 			case 'save':
 				channels[input[1]] = input[2]
 				fs.writeFile(fileName, JSON.stringify(channels), (err) => {
