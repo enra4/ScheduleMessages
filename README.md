@@ -5,12 +5,12 @@ works for regular text channels aswell as DMs.
 
 ## how to
 
-```
+```sh
 git clone https://github.com/enra4/ScheduleMessages
 cd ScheduleMessages
 npm install
 # go into app.js and place your token there
-# it can be found in the discord client, ctrl + shift + i > Application > Local Storage 
+# it can be found in the discord client, ctrl + shift + i > Application > Local Storage
 node app.js
 >> save niker <nikers ID>
 >> send niker 60 dont forget to brush your teeth when you wake up!!!1
