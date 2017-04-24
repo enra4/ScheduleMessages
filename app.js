@@ -72,5 +72,6 @@ function kjeks() {
 	})
 }
 
+console.log('dagsugerrrr')
 console.log('dag suger')
 kjeks()
