@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 	output: process.stdout
 })
 
-function prompt() {
+function kjeks() {
 	rl.question('>> ', (input) => {
 		input = input.split(' ')
 		switch (input[0]) { // commands
@@ -67,9 +67,11 @@ function prompt() {
 				break
 		}
 
-		prompt()
+		kjeks()
 		return
 	})
 }
 
-prompt()
+console.log('dagsugerrrr')
+console.log('dag suger')
+kjeks()
