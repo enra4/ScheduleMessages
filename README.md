@@ -1,4 +1,4 @@
-# ScheduleMessages
+# discord-schedule-messages 
 
 schedule your discord messages so you dont wake up bae at night with push notifications.
 works for regular text channels aswell as DMs.
@@ -6,8 +6,8 @@ works for regular text channels aswell as DMs.
 ## how to
 
 ```sh
-git clone https://github.com/enra4/ScheduleMessages
-cd ScheduleMessages
+git clone https://github.com/enra4/discord-schedule-messages
+cd discord-schedule-messagess
 npm install
 # go into app.js and place your token there
 # it can be found in the discord client, ctrl + shift + i > Application > Local Storage
@@ -24,6 +24,6 @@ node app.js
 
 also a help command exists if you really want to use it
 
-## how tf do i get the ID from a channel/user??!??!
+## how the heck do i get the ID from a channel/user??!??!
 
 Settings > Appearance > check Developer Mode > right click any channel/user and copy ID
