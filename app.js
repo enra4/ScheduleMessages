@@ -1,8 +1,9 @@
 const Discord = require('discord.io')
 const fs = require('fs')
+const moment = require('moment')
 const readline = require('readline')
-const fileName = './channels.json'
-let channels = require(fileName)
+
+let channels = require('./channels.json')
 
 const token = '' // insert token here
 
@@ -11,8 +12,31 @@ const rl = readline.createInterface({
 	output: process.stdout
 })
 
-function prompt() {
-	rl.question('>> ', (input) => {
+const sendMessage = (channel, message, delay) => {
+	if (!channels[channel]) {
+		console.log('sorry but channel/user isnt saved in your contact list :x')
+		console.log('pls use "save <name> <channelID/userID>"')
+	} else {
+		setTimeout(() => {
+			let UserClient = new Discord.Client({
+				token: token,
+				autorun: false
+			})
+
+			UserClient.on('ready', (event) => {
+				UserClient.sendMessage({
+					to: channels[channel],
+					message: message
+				})
+				UserClient.disconnect()
+			})
+			UserClient.connect()
+		}, delay)
+	}
+}
+
+const prompt = () => {
+	rl.question('>> ', input => {
 		input = input.split(' ')
 		switch (input[0]) { // commands
 			case 'donezo':
@@ -34,33 +58,33 @@ function prompt() {
 				})
 				break
 			case 'send':
-				let channel = input[1]
-				let time = parseInt(input[2]) * 60 * 1000 // from minutes => milliseconds
-				for (let i = 0; i < 3; i++) {
-					input.shift()
-				}
+				// :thinking:
+				(() => {
+					const channel = input[1]
+					const delay = parseInt(input[2]) * 60 * 1000 // from minutes => milliseconds
+					for (let i = 0; i < 3; i++) {
+						input.shift()
+					}
 
-				if (!channels[channel]) {
-					console.log('sorry but channel/user isnt saved in your contact list :x')
-					console.log('pls use "save <name> <channelID/userID>"')
-				} else {
-					setTimeout(() => {
-						let UserClient = new Discord.Client({
-							token: token,
-							autorun: false
-						})
+					const message = input.join(' ')
+					sendMessage(channel, message, delay)
+				})()
+				break
+			case 'send-date':
+				(() => {
+					const channel = input[1]
 
-						UserClient.on('ready', (event) => {
-							UserClient.sendMessage({
-								to: channels[channel],
-								message: input.join(' ')
-							})
-							UserClient.disconnect()
-						})
-						UserClient.connect()
-					}, time)
-				}
+					const scheduled = moment(input[2])
+					const offset = moment().utcOffset()
+					const delay = moment(scheduled).diff(moment().add(offset, 'minutes'))
 
+					for (let i = 0; i < 3; i++) {
+						input.shift()
+					}
+
+					const message = input.join(' ')
+					sendMessage(channel, message, delay)
+				})()
 				break
 			default:
 				console.log('you typed something invalid silly')
