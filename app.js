@@ -47,6 +47,7 @@ const prompt = () => {
 				console.log('	help					// shows this page ..hello???')
 				console.log('	save <name> <channelID/userID>		// saves to contacts')
 				console.log('	send <name> <minutes> <message>		// sends scheduled message')
+				console.log('	send <name> <timestamp> <message>	// sends scheduled message')
 				break
 			case 'save':
 				channels[input[1]] = input[2]

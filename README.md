@@ -28,6 +28,7 @@ $ node app.js
 
 * saves niker to contact list (you can go into channels.json to modify them later)
 * schedules two messages to be sent to niker in 60 minutes
+* sends some date specific messages
 * exits app
 
 also a help command exists if you really want to use it
