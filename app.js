@@ -50,7 +50,7 @@ const prompt = () => {
 				break
 			case 'save':
 				channels[input[1]] = input[2]
-				fs.writeFile(fileName, JSON.stringify(channels), (err) => {
+				fs.writeFile('./channels.json', JSON.stringify(channels), (err) => {
 					if (err) {
 						console.log('something went wrong when writing to file')
 						process.exit()
