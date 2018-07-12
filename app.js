@@ -78,7 +78,7 @@ const prompt = () => {
 	help
 	save <name> <ChannelID/UserID> <dm?true|false>
 	send <name> <minutes> <message>
-	send <name> <timestamp> <message>
+	send-date <name> <timestamp> <message>
 
   for examples, read the readme at https://github.com/enra4/discord-schedule-messages
 					`)

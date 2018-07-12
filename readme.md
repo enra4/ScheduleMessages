@@ -19,7 +19,7 @@ donezo
 help
 save <name> <ChannelID/UserID> <dm?true|false>
 send <name> <minutes> <message>
-send <name> <timestamp> <message>
+send-date <name> <timestamp> <message>
 ```
 
 
@@ -32,9 +32,9 @@ $ node app.js
 >> send niker 60 dont forget to brush your teeth when you wake up!!!1
 >> send niker 60 also have a nice day!!!§§
 >> send #general 2 this message is from the past
->> send niker 2018-07-13 messagerino
->> send niker 2018-07-13T14:53 minute specific also works wowie
->> send niker 2018-07-13T14:55:42 or even second specific!!!!212
+>> send-date niker 2018-07-13 messagerino
+>> send-date niker 2018-07-13T14:53 minute specific also works wowie
+>> send-date niker 2018-07-13T14:55:42 or even second specific!!!!212
 >> donezo
 ```
 
