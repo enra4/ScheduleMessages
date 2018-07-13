@@ -11,6 +11,10 @@ $ cd ScheduleMessages
 $ npm install
 ```
 
+## WARNING
+
+`send-date` has a timezone issue, see [the issue](https://github.com/enra4/discord-schedule-messages/issues/5) before using
+
 ### commands
 
 ```
